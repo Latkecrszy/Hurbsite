@@ -11,7 +11,7 @@ def index():
 
 @app.route('/todo')
 def todo():
-	data = [{"key": "value"}, {"key2": "value2"}]
+	data = [{"key": "value"}, {"key": "value"}]
 	res = make_response(jsonify(data))
 	res.mimetype = "application/json"
 	return res
