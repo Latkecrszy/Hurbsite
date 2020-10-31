@@ -34,7 +34,7 @@ def _leaderboard(ID):
     r = r.json()
     memberOrder = {}
     newMemberOrder = {}
-    with open("/REST/scratch_1.json") as f:
+    with open("/scratch_1.json") as f:
         messages = json.load(f)
     members = messages[str(ID)]
     for id, stuff in members.items():
@@ -76,7 +76,7 @@ def refreshHTML():
 
 
 def position(guild_id, member_id):
-    with open("/REST/scratch_1.json") as f:
+    with open("/scratch_1.json") as f:
         messages = json.load(f)
     messages = messages[str(guild_id)]
     XPs = {int(Member["xp"] + Member["level"] * (Member["level"] * 200)): ID for ID, Member in messages.items()}
