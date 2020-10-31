@@ -34,7 +34,7 @@ def _leaderboard(ID):
     r = r.json()
     memberOrder = {}
     newMemberOrder = {}
-    with open("/Users/sethraphael/PycharmProject/Hurb/Bots/rank.json") as f:
+    with open("/Users/sethraphael/PycharmProject/REST/scratch_1.json") as f:
         messages = json.load(f)
     members = messages[str(ID)]
     for id, stuff in members.items():
