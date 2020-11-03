@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Leaderboard | {{name}}</title>
+	</head>
+	<body>
+		<h1>Leaderboard for {{name}}</h1>
+		{% for value in values %}
+		<section>
+			<div style="display:block; text-align:center; font-size: 25px;"><b>#{{loop.index}}: {{value[0]}}</b></div>
+			<img src={{value[4]}} style="width:100px; height:100px; display:inline-block; float:right;">
+			<div style="display:block; text-align:center; font-size:13px; color:darkgray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{{value[5]}}</div>
+			<div style="display:inline-block; font-size:20px;" class="details"><br><i>Level: </i>{{value[3]}}<br><i>Messages: </i>{{value[1]}}<br><i>XP: </i>{{value[2]}}</div>
+			</section>
+		{% endfor %}
+	</body>
+	<style>
+	 	section {
+			width: 350px;
+			border: 15px solid #cbeef3;
+			padding-left: 30px;
+			padding-right: 30px;
+			padding-bottom: 30px;
+			padding-top: 10px;
+			margin: 10px;
+			border-radius: 10px;
+			display: inline-block;
+			background-color: #000000;
+			color: #FFFFFF;
+		}
+		html {
+			background-color: #4F4F4F;
+			font-family: oswald;
+		}
+		h1 {
+			text-align: center;
+		}
+		.details {
+			display: inline-block;
+			padding-bottom: 30px;
+		}
+		div {
+			display: inline-block;
+		}
+		img {
+			display: inline-block;
+		}
+
+	</style>
+</html>
