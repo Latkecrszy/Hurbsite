@@ -25,6 +25,11 @@ def profile(id):
     pass
 
 
+@app.route('/landingpage')
+def landingpage():
+    return render_template('website.html')
+
+
 @app.route('/<joke>', methods=['POST'])
 @app.route('/joke', methods=['GET'])
 def joke(Joke):
