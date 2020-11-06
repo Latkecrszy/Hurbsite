@@ -4,19 +4,30 @@
 		<title>Leaderboard | {{name}}</title>
 	</head>
 	<body>
-		<header class="title">Leaderboard for {{name}}</header>
+		<header class="title" style="width: 99vw;
+			box-shadow: 10px 8px 18px 10px #000000;
+			height: 50px;
+			color: white;
+			text-align: center;
+			float: center;
+			margin-top: 15px;
+			margin-bottom: 10px;
+			font-family: 'Josefin Sans', sans-serif;
+			font-size: 30px;
+			padding-top: 20px;">Leaderboard for {{name}}</header>
 		{% for value in values %}
 		<section class="box">
-			{% if loop.index == 1 %}
-				<img src="https://library.kissclipart.com/20180830/jtw/kissclipart-top-flat-icon-clipart-computer-icons-prize-clip-ar-08ce04a5819530eb.png" style="inline-block; width:40px; height:40px; float:left;">
+			{% if loop.index <= 6 %}
+				<img src="{{badges[loop.index|string]}}" style="inline-block; width:40px; height:40px; float:left;">
 			{% else %}
 				<div style="inline-block; font-family: 'Josefin Sans', sans-serif; text-align:left; font-size:20px">#{{loop.index}}</div>
 			{% endif %}
-			<div style="display:inline-block; text-align:right; font-size: 25px; font-family: 'Josefin Sans', sans-serif;"><b>&nbsp;&nbsp;{{value[0]}}</b><div style="display:inline-block; text-align:right; font-size:13px; color:darkgray;">#{{value[5]}}</div></div>
-			<img src={{value[4]}} style="width:100px; height:100px; display:block; float:right; border-radius:30px">
-
-			<div style="display:block; font-size:20px; font-family: 'Josefin Sans', sans-serif;" class="details"><br>Level: {{value[3]}}<br>Messages: {{value[1]}}<br>XP: {{value[2]}} / {{value[6]}}</div>
-  			<progress value = "{{value[7][0]}}" max = "{{value[7][1]}}" style="display:inline-block;"></progress>
+			<div style="display:inline-block; text-align:center; font-size: 25px; font-family: 'Josefin Sans', sans-serif;"><b>&nbsp;{{value[0]}}</b><div style="display:inline-block; text-align:center; font-size:13px; color:darkgray;">#{{value[5]}}</div></div>
+			<img src={{value[4]}} style="width:100px; height:100px; display:block; float:right; border-radius:13px">
+			<div style="display:block; font-size:20px; font-family: 'Josefin Sans', sans-serif;" class="details"><br>Level: {{value[3]}}</div>
+			<div style="display:block; font-size:20px; font-family: 'Josefin Sans', sans-serif;" class="details">Messages: {{value[1]}}</div>
+			<div style="display:block; font-size:20px; font-family: 'Josefin Sans', sans-serif;" class="details-end">XP: {{value[2]}} / {{value[6]}}</div>
+			<progress value = "{{value[7][0]}}" max = "{{value[7][1]}}" style="display:inline-block;"></progress>
 		</section>
 		{% endfor %}
 	</body>
@@ -61,8 +72,13 @@
 		}
 		.details {
 			display: inline-block;
-			padding-bottom: 30px;
+			padding-bottom: 10px;
+			padding-top: 10px;
 		}
+		.details-end {
+			display: inline-block;
+			padding-bottom: 20px;
+			padding-top: 10px;
 		div {
 			display: inline-block;
 
@@ -70,13 +86,15 @@
 		img {
 			display: inline-block;
 		}
-		header.title {
+		.title {
 			width: 99vw;
 			box-shadow: 10px 8px 18px 10px #000000;
 			height: 50px;
 			color: white;
 			text-align: center;
 			float: center;
+			margin-top: 15px;
+			margin-bottom: 10px;
 			font-family: 'Josefin Sans', sans-serif;
 			font-size: 30px;
 			padding-top: 20px;

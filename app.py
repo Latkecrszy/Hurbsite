@@ -27,7 +27,7 @@ def profile(id):
 
 @app.route('/<joke>', methods=['POST'])
 @app.route('/joke', methods=['GET'])
-def joke(joke):
+def joke(Joke):
     if request.method == "GET":
 
         jokes = ["Why did the chicken cross the road?<br>To get to the other side!",
@@ -42,18 +42,9 @@ def joke(joke):
         return f'''
         <html>
             <body>
-                <p>{joke}</p>
+                <p>{Joke}</p>
             </body>
         </html>'''
-
-
-def Joke(Joke):
-    return f'''
-<html>
-    <body>
-        <p>{Joke}</p>
-    </body>
-</html>'''
 
 
 def _leaderboard(ID):
@@ -102,7 +93,15 @@ def _leaderboard(ID):
         memberOrder.pop(min(memberOrder.keys()))
     values = [value for value in newMemberOrder.values()]
     print(8 & 2)
-    return render_template('leaderboard.html', values=values, name=r["name"])
+    badges = {
+        "1": "https://cdn.discordapp.com/attachments/765942853586124820/773786192927260683/award-3.png",
+        "2": "https://cdn.discordapp.com/attachments/716377034728931331/773791502731313162/award-4.png",
+        "3": "https://cdn.discordapp.com/attachments/716377034728931331/773791521921171456/award-5.png",
+        "4": "https://cdn.discordapp.com/attachments/716377034728931331/773792345501335552/award-8.png",
+        "5": "https://cdn.discordapp.com/attachments/716377034728931331/773792387772317716/award-9.png",
+        "6": "https://cdn.discordapp.com/attachments/716377034728931331/773792408550637592/award-10.png"
+    }
+    return render_template('leaderboard.html', values=values, name=r["name"], badges=badges)
 
 
 def adminRoles(member, guild):
