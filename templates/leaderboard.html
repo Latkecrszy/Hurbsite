@@ -17,7 +17,7 @@
 			padding-top: 20px;">Leaderboard for {{name}}</header>
 		{% for value in values %}
 		<section class="box">
-			{% if loop.index <= 6 %}
+			{% if loop.index <= 20 %}
 				<img src="{{badges[loop.index|string]}}" style="inline-block; width:40px; height:40px; float:left;">
 			{% else %}
 				<div style="inline-block; font-family: 'Josefin Sans', sans-serif; text-align:left; font-size:20px">#{{loop.index}}</div>

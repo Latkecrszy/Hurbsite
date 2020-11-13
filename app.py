@@ -1,9 +1,5 @@
 from flask import make_response, jsonify, Flask, render_template, request
 import os
-import discord
-from discord.ext import commands
-import time
-import os
 import dotenv
 import requests
 import json
@@ -104,7 +100,21 @@ def _leaderboard(ID):
         "3": "https://cdn.discordapp.com/attachments/716377034728931331/773791521921171456/award-5.png",
         "4": "https://cdn.discordapp.com/attachments/716377034728931331/773792345501335552/award-8.png",
         "5": "https://cdn.discordapp.com/attachments/716377034728931331/773792387772317716/award-9.png",
-        "6": "https://cdn.discordapp.com/attachments/716377034728931331/773792408550637592/award-10.png"
+        "6": "https://cdn.discordapp.com/attachments/716377034728931331/773792408550637592/award-10.png",
+        "7": "https://cdn.discordapp.com/attachments/716377034728931331/775416935294566430/award-11.png",
+        "8": "https://cdn.discordapp.com/attachments/716377034728931331/775416947260129310/award-12.png",
+        "9": "https://cdn.discordapp.com/attachments/716377034728931331/775416955989393480/award-13.png",
+        "10": "https://cdn.discordapp.com/attachments/716377034728931331/775416963974955018/award-14.png",
+        "11": "https://cdn.discordapp.com/attachments/716377034728931331/775416972074418246/award-15.png",
+        "12": "https://cdn.discordapp.com/attachments/716377034728931331/775416978328256552/award-16.png",
+        "13": "https://cdn.discordapp.com/attachments/716377034728931331/775416984346165298/award-17.png",
+        "14": "https://cdn.discordapp.com/attachments/716377034728931331/775416990344806440/award-18.png",
+        "15": "https://cdn.discordapp.com/attachments/716377034728931331/775417001908633600/award-19.png",
+        "16": "https://cdn.discordapp.com/attachments/716377034728931331/775417007717482506/award-20.png",
+        "17": "https://cdn.discordapp.com/attachments/716377034728931331/775417012683276368/award-21.png",
+        "18": "https://cdn.discordapp.com/attachments/716377034728931331/775417018634993664/award-22.png",
+        "19": "https://cdn.discordapp.com/attachments/716377034728931331/775417024112361522/award-23.png",
+        "20": "https://cdn.discordapp.com/attachments/716377034728931331/775417030173655070/award-24.png"
     }
     return render_template('leaderboard.html', values=values, name=r["name"], badges=badges)
 
