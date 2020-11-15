@@ -1,12 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <!---Favicons start-->
+    <link rel="apple-touch-icon" sizes="57x57" href="Favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="Favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="Favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="Favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="Favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="Favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="Favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="Favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="Favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="Favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="Favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!---Favicons end-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" />
     <link href="style.css" rel="stylesheet"/>
-    <script src="main.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
 
@@ -25,6 +42,17 @@ anime({
     direction: 'alternate',
     loop: true
 });
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        jQuery(document).ready(function($) {
+
+            setTimeout(function(){
+                $('body').addClass('loaded');
+            }, 3000);
+
+        });
     </script>
     <script src=”https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js”></script>
 
@@ -233,30 +261,6 @@ body{
     height: 12%;
 
     background-color: #402281;
-    box-shadow: 20px 30px 18px rgba(0.30980393290519714, 0.30980393290519714, 0.30980393290519714, 1);
-    border-radius: 30px;
-    border: 2px solid #402281;
-
-    font-family: Josefin Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 130.5%;
-    align-items: center;
-    vertical-align: middle;
-
-    /* background-color: white;
-    color: black;
-    border: 2px solid #4CAF50; */
-
-    color: #FFFFFF;
-}
-
-.add_button_1:hover {
-    width: 20%;
-    height: 12%;
-
-    background-color: #402281;
     box-shadow: 4px 8px 18px rgba(0.30980393290519714, 0.30980393290519714, 0.30980393290519714, 1);
     border-radius: 30px;
     border: 2px solid #402281;
@@ -275,7 +279,6 @@ body{
 
     color: #FFFFFF;
 }
-
 
 .features_button{
     width: 20%;
@@ -284,30 +287,6 @@ body{
     margin-left: 20px;
     border: 7px solid #1E2126;
     box-sizing: border-box;
-    box-shadow: 20px 30px 18px rgba(0.30980393290519714, 0.30980393290519714, 0.30980393290519714, 1);
-    border-radius: 30px;
-    text-align: center;
-    vertical-align: center;
-    background: #15191c;
-
-    font-family: Josefin Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 130.5%;
-    align-items: center;
-    margin-top: 30px;
-
-    color: #FFFFFF;
-}
-
-.features_button:hover {
-    width: 20%;
-    height: 12%;
-    line-height: 38px;
-    margin-left: 20px;
-    border: 7px solid #1E2126;
-    box-sizing: border-box;
     box-shadow: 4px 8px 18px rgba(0.30980393290519714, 0.30980393290519714, 0.30980393290519714, 1);
     border-radius: 30px;
     text-align: center;
@@ -324,9 +303,6 @@ body{
 
     color: #FFFFFF;
 }
-
-
-
 
 .features_link{
     text-decoration: none;
@@ -776,35 +752,6 @@ body{
     height: 20%;
 
     background-color: #402281;
-    box-shadow: 20px 30px 18px rgba(0.30980393290519714, 0.30980393290519714, 0.30980393290519714, 1);
-    border-radius: 30px;
-    border: 2px solid #402281;
-
-    font-family: Josefin Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 130.5%;
-    align-items: center;
-    vertical-align: middle;
-
-    /* background-color: white;
-    color: black;
-    border: 2px solid #4CAF50; */
-
-    color: #FFFFFF;
-
-    position: absolute;
-    float: right;
-    top: 250px;
-    right: 100px;
-}
-
-.add_button_2:hover {
-    width: 20%;
-    height: 20%;
-
-    background-color: #402281;
     box-shadow: 4px 8px 18px rgba(0.30980393290519714, 0.30980393290519714, 0.30980393290519714, 1);
     border-radius: 30px;
     border: 2px solid #402281;
@@ -833,19 +780,19 @@ body{
 
 /*additional cool styling*/
 
-.login_prompt a, .text_cmds a, .tandp a{
+.login_prompt a, .text_cmds a, .tandp a, .h_links a{
     position: relative;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.75);
     transition: color .4s ease-out;
 }
 
-.login_prompt a:hover, .text_cmds a:hover, .tandp a:hover{
+.login_prompt a:hover, .text_cmds a:hover, .tandp a:hover, .h_links a:hover{
     text-decoration: none;
     color: #ffffff;
 }
 
-.login_prompt a::after, .text_cmds a::after, .tandp a::after{
+.login_prompt a::after, .text_cmds a::after, .tandp a::after, .h_links a::after{
     border-radius: 1em;
     border-top: .1em solid #ffffff;
     content: "";
@@ -856,7 +803,7 @@ body{
     transition: right .4s cubic-bezier(0,.5,0,1), border-color .4s ease-out;
 }
 
-.login_prompt a:hover::after, .text_cmds a:hover::after, .tandp a:hover::after{
+.login_prompt a:hover::after, .text_cmds a:hover::after, .tandp a:hover::after, .h_links a:hover::after{
     border-color: rgba(255, 255, 255, 0.75);
     animation: anchor-underline 2s cubic-bezier(0,.5,0,1) infinite;
 }
@@ -876,7 +823,7 @@ body{
     }
 }
 
-.add_button_1, .add_button_2, .features_button{
+.add_button_1:hover, .add_button_2:hover{
     box-shadow: 20px 30px 18px rgba(0.30980393290519714, 0.30980393290519714, 0.30980393290519714, 1);
 }
 
@@ -889,6 +836,33 @@ body{
     float: left;
     position: relative;
 }
+
+.features_button {
+    transition-duration: 0.8s;
+}
+
+.features_button:hover, .h_login:hover{
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.features_button:hover a{
+    color: #000000;
+    transition-duration: 0.4s;
+}
+
+.graphic_1{
+    transition-duration: 0.4s;
+}
+
+.graphic_1:hover{
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
     </style>
     </head>
 
@@ -906,13 +880,12 @@ body{
 
         <div class="full">
             <div class="header">
-                <img src="https://cdn.discordapp.com/avatars/736283988628602960/b558212e5a66f7b25192116c212c381c.webp?size=1024" width="50px" height="50px" style="border-radius:10px; margin-left:20px; margin-top:10px">
                 <div class="h_links">
-                    <span><a>About</a></span>
-                    <span><a>Features</a></span>
-                    <span><a>Commands</a></span>
-                    <span><a>Status</a></span>
-                    <span><a>Help</a></span>
+                    <span><a href="#about">About</a></span>
+                    <span><a href="#features">Features</a></span>
+                    <span><a href="#commands">Commands</a></span>
+                    <span><a href="/status">Status</a></span>
+                    <span><a href="/help">Help</a></span>
                     <div class="h_login">Login</div>
                 </div>
             </div>
@@ -952,9 +925,9 @@ body{
                     <button class="add_button_1">
                         <img src="https://cdn.discordapp.com/attachments/765942853586124820/776337914539933726/Screen_Shot_2020-11-11_at_10.49.37_PM.png" style="vertical-align:middle;">
                     </button>
-
-                        <a class="features_link" href="#features"><button class="features_button">All Features</button></a>
-
+                    <button class="features_button">
+                        <a class="features_link" href="#features">All Features</a>
+                    </button>
                     <div class="login_prompt">Already added to your server? <a href="/">Login</a></div>
                 </div>
             </div>
@@ -1037,24 +1010,22 @@ body{
                     <h1 class="h_join">Join the party!</h1>
                     <p class="text_join">(<s>pizza</s> cool commands included)</p>
                     <div class="users">
-                        <h4 class="h_users">47551</h4>
+                        <h4 class="h_users">45434</h4>
                         <h6 class="s_users">users</h6>
                     </div>
                     <div class="servers">
-                        <h4 class="h_servers">42</h4>
+                        <h4 class="h_servers">40</h4>
                         <h6 class="s_servers">servers</h6>
                     </div>
                 </div>
-                <button class="add_button_2">
-                        <img src="https://cdn.discordapp.com/attachments/765942853586124820/776337914539933726/Screen_Shot_2020-11-11_at_10.49.37_PM.png" style="vertical-align:middle;">
-                </button>
+                <button class="add_button_2">Add to Discord</button>
             </div>
             <div class="footer" id="bottom">
                 <div class="curve2">
                     <svg class="footer_curve" width="1440" height="452" viewBox="0 0 1440 452" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M665.5 170.497C789.041 135.137 866.631 244.009 994 219.497C1113.5 196.5 1109.26 39.2714 1210.5 6.99941C1315.38 -26.43 1453 83.4977 1453 83.4977V451.997H-174.5V400.997C-174.5 400.997 -84.4118 413.575 -29 400.997C67.9101 379 80.4975 272.198 178 252.997C278.319 233.241 330.844 331.389 432 316.497C538.399 300.833 562.106 200.091 665.5 170.497Z" fill="#1E2126"/>
                     </svg>
-                    <p class="copyright">© 2020 Hurb</p>
+                    <p class="copyright">2020 Hurb</p>
                     <p class="credits">Bot developed by Latkecrszy#7777  |  Website developed by Titan#0415</p>
                     <p class="tandp">
                         <a href="/terms.html">
