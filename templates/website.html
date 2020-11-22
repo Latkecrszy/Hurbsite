@@ -24,6 +24,26 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" />
     <link href="style.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="lib/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+$(window).scroll(function() {
+    $('.graphic_1').each(function(){
+    var imagePos = $(this).offset().top;
+
+    var topOfWindow = $(window).scrollTop();
+        if (imagePos < topOfWindow+400) {
+        $(this).addClass("ltr-anime");
+        }
+    });
+});
+
+$('.element-to-hide').css('visibility', 'hidden');
+    </script>
+
+    <title>Hurb | The Great Little Bot That Does It All</title>
     <script>
         $(document).ready(function() {
 
@@ -43,20 +63,54 @@ anime({
     loop: true
 });
 
+$(window).scroll(function() {
+  $('.animation-test').each(function(){
+  var imagePos = $(this).offset().top;
+
+  var topOfWindow = $(window).scrollTop();
+    if (imagePos < topOfWindow+400) {
+      $(this).addClass("slideRight");
+    }
+  });
+});
+
+
+$('.element-to-hide').css('visibility', 'hidden');
+
+
+
+const wave1 = "M68.8,-24.1C75.1,-3.2,56.2,24.1,34.5,37.5C12.8,50.9,-11.8,50.5,-28.6,38.5C-45.4,26.5,-54.5,2.9,-48.4,-17.8C-42.4,-38.5,-21.2,-56.3,5.1,-57.9C31.3,-59.6,62.6,-45,68.8,-24.1Z",
+      wave2 = "M46.6,-21.5C52.4,2.7,43.6,25.3,27.2,37.1C10.9,48.9,-13.1,50,-34.2,37C-55.4,24,-73.7,-2.9,-67.5,-27.7C-61.4,-52.4,-30.7,-74.8,-5.1,-73.2C20.4,-71.5,40.8,-45.7,46.6,-21.5Z",
+      wave3 = "M52.6,-33.5C63.2,-12,63.4,12.3,52.8,32.3C42.3,52.4,21.2,68.1,1.1,67.5C-18.9,66.8,-37.9,49.8,-45.9,31.2C-53.9,12.6,-51,-7.6,-41.5,-28.4C-32.1,-49.2,-16,-70.6,2.5,-72C21,-73.4,42,-54.9,52.6,-33.5Z",
+      wave4 = "M46.8,-28.2C59.8,-4.7,68.6,20,60.2,40.7C51.7,61.3,25.8,77.8,4.1,75.4C-17.6,73.1,-35.3,51.8,-45.5,30.2C-55.7,8.6,-58.4,-13.4,-49.6,-34.5C-40.8,-55.7,-20.4,-76.1,-1.7,-75.1C17,-74.1,33.9,-51.8,46.8,-28.2Z";
+
+anime({
+  targets: '.blob-ani > path',
+  easing: 'linear',
+  duration: 7500,
+  loop: true,
+  d: [
+    { value: [wave1, wave2] },
+    { value: wave3 },
+    { value: wave4 },
+    { value: wave1 },
+  ],
+});
+
+
+anime({
+  targets: '.login_prompt .el',
+  translateX: 270,
+  direction: 'alternate',
+  loop: true,
+  delay: function(el, i, l) {
+    return i * 100;
+  },
+  endDelay: function(el, i, l) {
+    return (l - i) * 100;
+  }
+});
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        jQuery(document).ready(function($) {
-
-            setTimeout(function(){
-                $('body').addClass('loaded');
-            }, 3000);
-
-        });
-    </script>
-    <script src=”https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js”></script>
-
-    <title>Hurb | The Great Little Bot That Does It All</title>
     <style>
         #loader-wrapper .loader-section {
     position: fixed;
@@ -76,19 +130,19 @@ anime({
 }
 
 #loader {
-    z-index: 1001; /* anything higher than z-index: 1000 of .loader-section */
+    z-index: 1001;
 }
 
 .loaded #loader-wrapper .loader-section.section-left {
-    -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
-    -ms-transform: translateX(-100%);  /* IE 9 */
-    transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
 }
 
 .loaded #loader-wrapper .loader-section.section-right {
-    -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
-    -ms-transform: translateX(100%);  /* IE 9 */
-    transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
 }
 
 .loaded #loader {
@@ -132,6 +186,19 @@ anime({
     height: 200px;
     width: 800px;
 }
+
+/*media queries begin*/
+
+@media screen and (max-width: 450px) {
+    .curve {
+      display: none;
+    }
+}
+
+
+
+
+
 
 /*main css begins here*/
 
@@ -228,18 +295,16 @@ body{
 }
 
 .path{
-    stroke-dasharray: 300;
-    animation: dash 5s linear alternate-reverse infinite;
+    stroke-dasharray: 300000;
+    animation: dash 4s cubic-bezier(0.4, 0, 1, 1) alternate infinite;
 }
 
 @keyframes dash {
     from {
-        stroke-dasharray: 0 1000; /* zero-length stroke,
-                                        1000-length gap */
+        stroke-dasharray: 0 1000;
     }
         to {
-        stroke-dasharray: 1000 0;/* 1000-length stroke,
-                                        zero-length gap */
+        stroke-dasharray: 1000 0;
     }
 }
 
@@ -256,7 +321,7 @@ body{
     line-height: 104.3%;
 }
 
-.add_button_1{
+.add_button{
     width: 20%;
     height: 12%;
 
@@ -340,6 +405,7 @@ body{
 
 .curve{
     position: relative;
+    width: 100%;
 }
 
 .p_about{
@@ -384,6 +450,7 @@ body{
 }
 
 .graphic_1, .graphic_3, .graphic_5{
+    visibility: visible;
     float: left;
     height: 45%;
     width: 30%;
@@ -392,9 +459,12 @@ body{
     box-shadow: 4px 8px 18px rgba(0.30980393290519714, 0.30980393290519714, 0.30980393290519714, 1);
     border-radius: 30px;
     vertical-align: middle;
+
+    animation: ltr-anime 1.5s 4s ease forwards;
 }
 
 .h_text_1, .h_text_3, .h_text_5{
+    visibility: visible;
     float: right;
     width: 40%;
     font-family: Josefin Sans;
@@ -406,9 +476,11 @@ body{
     padding-left: 5%;
 
     color: #FFFFFF;
+    animation: ltr-anime 1.5s 4s ease forwards;
 }
 
 .text_1, .text_3, .text_5{
+    visibility: visible;
     float: right;
     width: 45%;
     font-family: Josefin Sans;
@@ -420,6 +492,7 @@ body{
     padding-right: 5%;
 
     color: #FFFFFF;
+    animation: ltr-anime 1.5s 4s ease forwards;
 }
 
 .feature_2, .feature_4, .feature_6{
@@ -427,6 +500,7 @@ body{
 }
 
 .graphic_2, .graphic_4, .graphic_6{
+    visibility: visible;
     float: right;
     height: 40%;
     width: 30%;
@@ -435,9 +509,12 @@ body{
     box-shadow: 4px 8px 18px rgba(0.30980393290519714, 0.30980393290519714, 0.30980393290519714, 1);
     border-radius: 30px;
     vertical-align: middle;
+
+    animation: ltr-anime 1.5s 4s ease forwards;
 }
 
 .h_text_2, .h_text_4, .h_text_6{
+    visibility: visible;
     float: left;
     width: 40%;
     font-family: Josefin Sans;
@@ -449,9 +526,12 @@ body{
     padding-left: 5%;
 
     color: #FFFFFF;
+
+    animation: ltr-anime 1.5s 4s ease forwards;
 }
 
 .text_2, .text_4, .text_6{
+    visibility: visible;
     float: left;
     width: 40%;
     font-family: Josefin Sans;
@@ -463,7 +543,23 @@ body{
     padding-right: 5%;
 
     color: #FFFFFF;
+
+    animation: ltr-anime 1.5s 4s ease forwards;
 }
+
+@keyframes ltr-anime{
+    0%{
+        left: 0%;
+        opacity: 0;
+    }
+    100%{
+        left: 5%;
+        opacity: 1;
+    }
+}
+
+
+
 
 .coming-soon{
     height: 350px;
@@ -497,7 +593,7 @@ body{
 }
 
 .commands{
-    height: 750px;
+    height: 550px;
     padding: 15%;
     max-width: 100%;
     padding-top: 0px;
@@ -529,17 +625,6 @@ body{
     line-height: 36px;
 }
 
-.floats{
-    height: 500px;
-    max-width: 100%;
-    overflow: hidden;
-    padding: 1%;
-    /*padding-top: 0%;
-    padding-bottom: 0%;*/
-    position: relative;
-    align-items: center;
-}
-
 .cmd_mute, .cmd_kick, .cmd_unmute, .cmd_leaderboard, .cmd_prefix, .cmd_warn, .cmd_catto, .cmd_birb, .cmd_rename, .cmd_purge, .cmd_joke, .cmd_meme, .cmd_topic{
     /*position: absolute;
     width: 159px;
@@ -562,7 +647,7 @@ body{
     font-family: Poppins;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 36px;
     text-align: center;
 }
@@ -837,7 +922,7 @@ body{
     position: relative;
 }
 
-.features_button {
+.features_button, .h_login {
     transition-duration: 0.8s;
 }
 
@@ -846,7 +931,7 @@ body{
     color: #000000;
 }
 
-.features_button:hover a{
+.features_button:hover a, .h_login:hover a{
     color: #000000;
     transition-duration: 0.4s;
 }
@@ -863,23 +948,255 @@ html{
     scroll-behavior: smooth;
 }
 
+
+.floats{
+    height: 300px;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 1%;
+    /*padding-top: 0%;
+    padding-bottom: 0%;*/
+    position: relative;
+    align-items: center;
+}
+
+
+@keyframes hideshow {
+    0% { opacity: 0; }
+    2% { opacity: 1 }
+    5% { opacity: 1; }
+    8% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.text-1 {
+    animation: hideshow 45s 0s ease infinite;
+
+    font-size: 45px;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    margin-top: 100px;
+    font-family: Poppins;
+}
+
+.text-2 {
+    opacity: 0;
+    animation: hideshow 45s 4.5s ease infinite;
+
+
+    font-size: 45px;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 3;
+    position: absolute;
+    width: 100%;
+    margin-top: 100px;
+    font-family: Poppins;
+}
+
+.text-3 {
+    opacity: 0;
+    animation: hideshow 45s 9s ease infinite;
+
+
+    font-size: 45px;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    margin-top: 100px;
+    font-family: Poppins;
+}
+
+.text-4 {
+    opacity: 0;
+    animation: hideshow 45s 13.5s ease infinite;
+
+
+    font-size: 45px;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    margin-top: 100px;
+    font-family: Poppins;
+}
+
+.text-5 {
+    opacity: 0;
+    animation: hideshow 45s 18s ease infinite;
+
+
+    font-size: 45px;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    margin-top: 100px;
+    font-family: Poppins;
+}
+
+.text-6 {
+    opacity: 0;
+    animation: hideshow 45s 22.5s ease infinite;
+
+
+    font-size: 45px;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    margin-top: 100px;
+    font-family: Poppins;
+}
+
+.text-7 {
+    opacity: 0;
+    animation: hideshow 45s 27s ease infinite;
+
+
+    font-size: 45px;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    margin-top: 100px;
+    font-family: Poppins;
+}
+
+.text-8 {
+    opacity: 0;
+    animation: hideshow 45s 31.5s ease infinite;
+
+
+    font-size: 45px;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    margin-top: 100px;
+    font-family: Poppins;
+}
+
+.text-9 {
+    opacity: 0;
+    animation: hideshow 45s 36s ease infinite;
+
+
+    font-size: 45px;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    margin-top: 100px;
+    font-family: Poppins;
+}
+
+.text-10 {
+    opacity: 0;
+    animation: hideshow 45s 40.5s ease infinite;
+
+
+    font-size: 45px;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    margin-top: 100px;
+    font-family: Poppins;
+}
+.blob-ani{
+    position: absolute;
+}
+
+.preloader {
+    align-items: center;
+    background: rgb(23, 22, 22);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    transition: opacity 0.3s linear;
+    width: 100%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+
+.preloader.loaded{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.add_to_discord_link{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.add_button span, .add_button_2 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.add_button span:after, .add_button_2 span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.add_button:hover span, .add_button_2:hover span{
+    padding-right: 25px;
+}
+
+.add_button:hover span:after, .add_button_2:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
     </style>
     </head>
 
     <body>
-
-        <div id="loader-wrapper">
-            <div id="loader"></div>
-
-            <div class="loader-section section-left"></div>
-            <div class="loader-section section-right"></div>
-
-
+        <div class="preloader" id="preloader">
+            <img src="spinner.svg" alt="spinner">
         </div>
 
+        <!--<script>
 
-        <div class="full">
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("preloader").style.display = "none";
+  document.getElementById("full").style.display = "block";
+}
+
+        </script>-->
+
+        <div class="full" id="full">
             <div class="header">
+                <img src="https://cdn.discordapp.com/avatars/736283988628602960/b558212e5a66f7b25192116c212c381c.webp?size=1024" width="50px" height="50px" style="border-radius:10px; margin-left:20px; margin-top:10px">
                 <div class="h_links">
                     <span><a href="#about">About</a></span>
                     <span><a href="#features">Features</a></span>
@@ -909,8 +1226,8 @@ html{
                     </svg>
                     <!---<h1>Hurb</h1>--->
                     <h5>The Great Little Bot That Does It All!</h5>
-                    <!---<button class="add_button">
-                        <svg width="50" height="49" viewBox="0 0 50 49" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <button class="add_button">
+                        <!--<svg class="discord_logo" width="50" height="49" viewBox="0 0 50 49" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <rect id="Discord-Logo-White 1" width="50" height="48.9796" fill="url(#pattern0)"/>
                             <defs>
                             <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -918,13 +1235,12 @@ html{
                             </pattern>
                             <image id="image0" data-name="Discord-Logo-White.png" width="245" height="240" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPUAAADwCAMAAADvotLkAAAAM1BMVEUAAAD///////////////////////////////////////////////////////////////+3leKCAAAAEHRSTlMAQIAQv++fz2Aw3yBwUK+PD/W3OwAABYNJREFUeAHt3deWqzAPhuHPljtN93+zf8kasktWHLPHgBj0nk956NVA0zRN0zRN0zRN0zRN07Q+kTFWSKMxOKIpFJZVXDJ2jcbCEosJ+zUVllo02CeaWXIL9ihHlp2jHdCepRe7s4cVfSc2Rb5CM7q28DUa0THDF8kP6FfkqxTQrYmv04BeOb5OCzo18IUq6NTIVyqjTzNfKYs+Fb5SM/rElyqiS5mvFbpkVK1qVata1apWtapVrWpVq1rVqlY1VK1qVata1apWtapVrWpVR2et9VytWLu4+EPUJaQMAMhz0+32PIZycXUcBzyagucP+TABqzxeVl1Wcl48N+VDxlfDUq6odgaPKMUXnPstz38UE+Gr5K6mDsM6y35TOWetMXjJGLv80vsw4CvjrqR2+cscVomz04B6w2RXZDB1t0R1MX+a5zGjNbPEP6YbkPwl1JYAABTWDfPGhnH+fR0BLfLVMePR6OvkajRGZm9p/Q+KcPVCz5dEXCL8ezn456oCmkWrHR7ZdUP8nSiVdSICRbLaAMAQiyX0KLmS8SgJVjsAMDGhW8YlPCpy1QZATuhaMgCAJFYdsWNFqjphx6xQdcGekZeptti1IFNN2LUsUh2wc06i2mDnkkB1we55eeoRuxfkqQfsXhannnFARZo64YBGaWrCAQ3C1DMOKcpSJxzSKEtNOKRBlHrGQUVJ6oSDWiSpBxxUFqSOOCwvR21xWEGO2uCwkhi1x4eGZK01hGrGWpsGfIjEqGdUM8/b0u9NZH3jYHxRinpEJQr8zL8jGd88OtsiRZ3bxwhLDStrrLInKeqmbW6FnbfsCEmI2m2ZM57wUtm0Jywy1HbTvxgadkae8L4gQz1tWgl9y8wb8b5RhprwttAwkfLGlcaIUPuNO1fbcrSFSiLUDu9rOaaxW0/iogS13ah2LWqD980S1GkPdcb7rAS12Xg2vLQgUMlIUG8dBi81/P6CSlmAuqDS2LKh8ltHmhSgdhsPml3LTj2jVjlfHTaeF5qGi9wO1dz5aotaVBomkt04WvByvjptGm09UsOB64R69ny1wQa2I+AT239CI8lXg54kbxs+L+EGfMqcr8bnhtE57+ZEqJSC89HZDFxfvUt0SzVOV7tbq1VtB/RrMnipSFTnMqJTg5vxmpOoRuIyoUNkOdJl1EjMznzf7Fe0ePXKbnZXzCtakLp+m2LyzFwSfeOFxbeH7YM/W81z9XtePhhsjlKsnsRGPl3Ny4cTwrJkbGkdeKKY+g2Vc9Wc8KbseIUbNEUrmb0l2Xf3ODWcQPp5/CQ31vFaGPCmkYWoK2xMjn/lltEQXiMzhsjP/DJc4ckrDnjt7cgn0c32fyWT7P8KLvIfzal6hUKQmh3hfVQ6fTsvRxalrl7tCp2+wzN6eW+xzUOfbz5NlT2CJPWapR4jj/gMvDYEse/aezt0+BJnpIpZlnptnr7/JU6HP6Lk5I+N40MiPAvf/HjekObLjHlVgjW5enOm4bAnGzuXC45lVxz/Y67oGJWqVrWqVa1qVata1apWdbdUrWpVq1rVqla1qlWtalWrWtWqzrdUg0/OxzPUhU/OxBPUM5/cSPF4deKTc0A4XE18drSFjZ+yiE8AwtFqwycXAGA8WA3H51b2Hyte4oFK3sBGtyyf24hHkz9UjXj6vutR9oeq6WQ2tbPRsVz4zKb2/wP4MXM7tP8f6BotfF4FzWx0zhQ+rdzMRvdS5JMam995wQ5l6/iMYvObJNipwZwQWtn4wdlbqpFuqUa6pRrJ31GN7O+oRo53VIPiHdWgcEc1EG6pxnhLNdIt1cj+jmrkckc1KN5RDZrvqAbCLdUYb6lGuqUa2d9RjVzuqAbFO6pBM+OOLdA0TdM0TdM0TdM0TdO0b/ZfegfWFMciUSwAAAAASUVORK5CYII="/>
                             </defs>
-                        </svg>
-                        <image src="Discord-Logo-White 1.svg"></image>
-                        Add to Discord
-                    </button>--->
-                    <button class="add_button_1">
-                        <img src="https://cdn.discordapp.com/attachments/765942853586124820/776337914539933726/Screen_Shot_2020-11-11_at_10.49.37_PM.png" style="vertical-align:middle;">
+                        </svg>-->
+                        <span><a class="add_to_discord_link" href="https://discord.com/api/oauth2/authorize?client_id=736283988628602960&permissions=8&scope=bot">Add to Discord</a></span>
                     </button>
+                    <!--<button class="add_button_1">
+                        <img src="https://cdn.discordapp.com/attachments/765942853586124820/776337914539933726/Screen_Shot_2020-11-11_at_10.49.37_PM.png" style="vertical-align:middle;">
+                    </button>-->
                     <button class="features_button">
                         <a class="features_link" href="#features">All Features</a>
                     </button>
@@ -933,44 +1249,44 @@ html{
             </div>
             <div class="about" id="about">
                 <div class="curve">
-                    <svg width="1440" height="1440" viewBox="0 0 1440 1440" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M354.886 330.394C230.273 278.372 224.768 144.461 103.273 84.8424C-255.885 -91.3989 -292.52 1174.13 103.273 1151.71C313.689 1139.79 333.797 829.856 544.472 825.179C683.706 822.088 742.669 987.833 878.624 956.105C965.903 935.736 983.128 844.059 1070.71 825.179C1183.4 800.886 1241.77 941.936 1353.34 912.463C1446.01 887.982 1521.18 848.196 1543.42 750.514C1571.8 625.894 1463.26 545.644 1353.34 490.24C1248.18 437.236 1167.64 520.812 1054.7 490.24C924.506 454.996 889.802 340.145 760.07 303.052C607.069 259.308 502.249 391.914 354.886 330.394Z" fill="#1E2126"/>
+                    <svg class="curve-ani" width="1440" height="1440" viewBox="0 0 1440 1440" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="path" fill-rule="even-odd" clip-rule="even-odd" d="M354.886 330.394C230.273 278.372 224.768 144.461 103.273 84.8424C-255.885 -91.3989 -292.52 1174.13 103.273 1151.71C313.689 1139.79 333.797 829.856 544.472 825.179C683.706 822.088 742.669 987.833 878.624 956.105C965.903 935.736 983.128 844.059 1070.71 825.179C1183.4 800.886 1241.77 941.936 1353.34 912.463C1446.01 887.982 1521.18 848.196 1543.42 750.514C1571.8 625.894 1463.26 545.644 1353.34 490.24C1248.18 437.236 1167.64 520.812 1054.7 490.24C924.506 454.996 889.802 340.145 760.07 303.052C607.069 259.308 502.249 391.914 354.886 330.394Z" fill="#1E2126"/>
                     </svg>
                     <p class="p_about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor dictum risus, in semper tortor faucibus a. Phasellus porttitor bibendum ligula, in maximus massa suscipit vitae. In suscipit leo massa, non tincidunt massa vulputate sit amet. Phasellus vitae arcu dignissim, sollicitudin elit mattis, faucibus ante. Integer cursus.</p>
                 </div>
             </div>
             <div class="features" id="features">
                 <div class="feature_1">
-                    <div class="graphic_1"></div>
-                    <h4 class="h_text_1">High level Moderation</h4>
-                    <p class="text_1">
+                    <div class="graphic_1 reveal-on-scroll"></div>
+                    <h4 class="h_text_1 reveal-on-scroll">High level Moderation</h4>
+                    <p class="text_1 reveal-on-scroll">
                         Hurb is equipped with advanced moderation commands such as muting, tempmuting, modmuting (allows even admins to be muted), and channelmuting.
                     </p>
                 </div>
                 <div class="feature_2">
-                    <div class="graphic_2"></div>
-                    <h4 class="h_text_2">Bustling economy</h4>
-                    <p class="text_2">With gambling, donating, and even buying roles, hurb has one of the best economy systems of any bot out there.</p>
+                    <div class="graphic_2 element-to-hide"></div>
+                    <h4 class="h_text_2 element-to-hide">Bustling economy</h4>
+                    <p class="text_2 element-to-hide">With gambling, donating, and even buying roles, hurb has one of the best economy systems of any bot out there.</p>
                 </div>
                 <div class="feature_3">
-                    <div class="graphic_3"></div>
-                    <h4 class="h_text_3">Auto features</h4>
-                    <p class="text_3">Hurb can scan every message for potential things you don't want, such as invites, links, or even bad words, not to mention the ability to search and react to certain words within messsages.</p>
+                    <div class="graphic_3 element-to-hide"></div>
+                    <h4 class="h_text_3 element-to-hide">Auto features</h4>
+                    <p class="text_3 element-to-hide">Hurb can scan every message for potential things you don't want, such as invites, links, or even bad words, not to mention the ability to search and react to certain words within messsages.</p>
                 </div>
                 <div class="feature_4">
-                    <div class="graphic_4"></div>
-                    <h4 class="h_text_4">Animated emojis</h4>
-                    <p class="text_4">If you send a failed emoji from any server that Hurb is in, whether it be an animated emoji from your current server or a regular one from a server you aren't even in, Hurb can send the message for you from a bot that looks exactly like yourself, essentially granting you nitro. All for free!</p>
+                    <div class="graphic_4 element-to-hide"></div>
+                    <h4 class="h_text_4 element-to-hide">Animated emojis</h4>
+                    <p class="text_4 element-to-hide">If you send a failed emoji from any server that Hurb is in, whether it be an animated emoji from your current server or a regular one from a server you aren't even in, Hurb can send the message for you from a bot that looks exactly like yourself, essentially granting you nitro. All for free!</p>
                 </div>
                 <div class="feature_5">
-                    <div class="graphic_5"></div>
-                    <h4 class="h_text_5">Advanced ranking system</h4>
-                    <p class="text_5">Want a ranking system with built in antispam? Like to be able to customize your person rank card? Even wanted to set your progress bar to a bunch of walking ducks? Well, Hurb can do that all and more with its leveling system!</p>
+                    <div class="graphic_5 element-to-hide"></div>
+                    <h4 class="h_text_5 element-to-hide">Advanced ranking system</h4>
+                    <p class="text_5 element-to-hide">Want a ranking system with built in antispam? Like to be able to customize your person rank card? Even wanted to set your progress bar to a bunch of walking ducks? Well, Hurb can do that all and more with its leveling system!</p>
                 </div>
                 <div class="feature_6">
-                    <div class="graphic_6"></div>
-                    <h4 class="h_text_6">Great random stuff I made for no reason</h4>
-                    <p class="text_6">Hurb also has lots of random, quirky but fun commands such as searching for gifs, playing hangman, and killing other users.
+                    <div class="graphic_6 element-to-hide"></div>
+                    <h4 class="h_text_6 element-to-hide">Great random stuff I made for no reason</h4>
+                    <p class="text_6 element-to-hide">Hurb also has lots of random, quirky but fun commands such as searching for gifs, playing hangman, and killing other users.
                     </p>
                 </div>
             </div>
@@ -981,9 +1297,24 @@ html{
             </div>
             <div class="commands" id="commands">
                 <h1 class="h_cmds">Commands</h1>
-                <h4 class="dtls_cmds">(hover for more details)</h4>
+                <!--<h4 class="dtls_cmds">(hover for more details)</h4>-->
                 <div class="floats">
-                    <div class="cmd_mute"></div>
+                    <!--<svg class="blob-ani" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="even-odd" clip-rule="even-odd" fill="#FA8128" d="M68.8,-24.1C75.1,-3.2,56.2,24.1,34.5,37.5C12.8,50.9,-11.8,50.5,-28.6,38.5C-45.4,26.5,-54.5,2.9,-48.4,-17.8C-42.4,-38.5,-21.2,-56.3,5.1,-57.9C31.3,-59.6,62.6,-45,68.8,-24.1Z"/>-->
+                    <p class="text-1">%mute</p>
+                    <p class="text-2">%catto</p>
+                    <p class="text-3">%meme</p>
+                    <p class="text-4">%start</p>
+                    <p class="text-5">%rename</p>
+                    <p class="text-6">%purge</p>
+                    <p class="text-7">%timer</p>
+                    <p class="text-8">%kick</p>
+                    <p class="text-9">%modmute</p>
+                    <p class="text-10">%balance</p>
+
+
+
+                    <!--<div class="cmd_mute"></div>
                     <div class="cmd_kick"></div>
                     <div class="cmd_unmute"></div>
                     <div class="cmd_leaderboard"></div>
@@ -995,7 +1326,7 @@ html{
                     <div class="cmd_purge"></div>
                     <div class="cmd_joke"></div>
                     <div class="cmd_meme"></div>
-                    <div class="cmd_topic"></div>
+                    <div class="cmd_topic"></div>-->
 
                 </div>
                 <p class="text_cmds">
@@ -1018,7 +1349,7 @@ html{
                         <h6 class="s_servers">servers</h6>
                     </div>
                 </div>
-                <button class="add_button_2">Add to Discord</button>
+                <button class="add_button_2"><span><a class="add_to_discord_link" href="https://discord.com/api/oauth2/authorize?client_id=736283988628602960&permissions=8&scope=bot">Add to Discord</a></span></button>
             </div>
             <div class="footer" id="bottom">
                 <div class="curve2">
@@ -1039,5 +1370,37 @@ html{
                 </div>
             </div>
         </div>
+        <script>
+            const preloader = document.querySelector('.preloader');
+
+const fadeEffect = setInterval(() => {
+  // if we don't set opacity 1 in CSS, then   //it will be equaled to "", that's why we   // check it
+  if (!preloader.style.opacity) {
+    preloader.style.opacity = 1;
+  }
+  if (preloader.style.opacity > 0) {
+    preloader.style.opacity -= 0.1;
+  } else {
+    clearInterval(fadeEffect);
+  }
+}, 200);
+
+window.addEventListener('load', fadeEffect);
+        </script>
+        <script>
+
+anime({
+  targets: '.login_prompt .el',
+  translateX: 270,
+  direction: 'alternate',
+  loop: true,
+  delay: function(el, i, l) {
+    return i * 100;
+  },
+  endDelay: function(el, i, l) {
+    return (l - i) * 100;
+  }
+});
+        </script>
     </body>
 </html>
