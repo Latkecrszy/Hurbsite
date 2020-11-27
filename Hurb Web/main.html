@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!---Favicons start-->
+    <link rel="apple-touch-icon" sizes="57x57" href="Favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="Favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="Favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="Favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="Favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="Favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="Favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="Favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="Favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="Favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="Favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!---Favicons end-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="lib/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+$(window).scroll(function() {
+    $('.graphic_1').each(function(){
+    var imagePos = $(this).offset().top;
+
+    var topOfWindow = $(window).scrollTop();
+        if (imagePos < topOfWindow+400) {
+        $(this).addClass("ltr-anime");
+        }
+    });
+});
+
+$('.element-to-hide').css('visibility', 'hidden');
+    </script>
+
+    <title>Hurb | The Great Little Bot That Does It All</title>
+    </head>
+    
+    <body>
+        <div class="preloader" id="preloader">
+            <img src="spinner.svg" alt="spinner">
+        </div>
+
+        <!--<script>
+
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("preloader").style.display = "none";
+  document.getElementById("full").style.display = "block";
+}
+
+        </script>-->
+
+        <div class="full" id="full">
+            <div class="header">
+                <img src="https://cdn.discordapp.com/avatars/736283988628602960/b558212e5a66f7b25192116c212c381c.webp?size=1024" width="50px" height="50px" style="border-radius:10px; margin-left:20px; margin-top:10px">
+                <div class="h_links">
+                    <span><a href="#about">About</a></span>
+                    <span><a href="#features">Features</a></span>
+                    <span><a href="#commands">Commands</a></span>
+                    <span><a href="/status">Status</a></span>
+                    <span><a href="/help">Help</a></span>
+                    <div class="h_login">Login</div>
+                </div>
+            </div>
+            <div class="top_main">
+                <div class="main_content" id="top">
+                    <div class="shapes">
+                        <div class="shape_1"></div>
+                        <div class="shape_2"></div>
+                        <div class="shape_3"></div>
+                        <div class="shape_4"></div>
+                        <div class="shape_5"></div>
+                        <div class="shape_6"></div>
+                        <div class="shape_7"></div>
+                        <div class="shape_8"></div>
+                        <div class="shape_9"></div>
+                        <div class="shape_10"></div>
+                        <div class="shape_11"></div>
+                    </div>
+                    <svg class="logo" viewBox="0 0 259 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="path" fill-rule="evenodd" clip-rule="evenodd" stroke="#ffffff" stroke-width="4" d="M77 3.8V18.2H105.844V56.5C105.844 58.8689 106.436 59.5733 106.587 59.7347C106.769 59.9301 107.118 60.3 108.544 60.3C110.074 60.3 110.443 59.9053 110.597 59.7404L110.602 59.7347C110.753 59.5733 111.344 58.8689 111.344 56.5V18.2H173.827V19.2363C176.841 18.1391 180.025 17.6 183.327 17.6H183.501V0H216.601V18.723C219.534 17.8227 222.619 17.4 225.801 17.4C231.83 17.4 237.477 18.9514 242.541 22.116C247.644 25.3057 251.533 29.808 254.257 35.3231C257.105 40.9523 258.401 47.2513 258.401 54C258.401 60.7606 257.1 67.0791 254.268 72.7539C251.552 78.2635 247.684 82.7783 242.627 86.0294L242.584 86.057L242.541 86.084C237.477 89.2486 231.83 90.8 225.801 90.8C222.618 90.8 219.53 90.4017 216.601 89.5316V90H183.501V51.7H178.627C175.583 51.7 174.536 52.3387 174.329 52.494C174.302 52.5496 174.263 52.6415 174.217 52.7798C174.034 53.3279 173.827 54.3693 173.827 56.1V90H111.344V89.3321C108.494 90.1898 105.513 90.6 102.444 90.6C96.9754 90.6 91.8056 89.3918 87.1754 86.7459L87.1224 86.7157L87.0699 86.6846C82.7738 84.142 79.4134 80.5939 77 76.2378V90H43.9V61.1H33.3V90H0.199951V3.8H33.3V31.3H43.9V3.8H77ZM51.9 39.3H25.3V11.8H8.19995V82H25.3V53.1H51.9V82H69V11.8H51.9V39.3ZM111.344 80.8224C111.648 80.6891 111.948 80.5483 112.244 80.4C115.244 78.8667 117.611 76.8667 119.344 74.4V82H136.444V26.2H119.344V56.5C119.344 58.4017 119.094 60.0872 118.592 61.5565C118.109 62.9716 117.393 64.1861 116.444 65.2C116.087 65.5819 115.706 65.9285 115.301 66.2398C113.514 67.6133 111.262 68.3 108.544 68.3C105.278 68.3 102.678 67.2667 100.744 65.2C98.8112 63.1333 97.8445 60.2333 97.8445 56.5V26.2H80.8445V58.8C80.8445 63.6667 81.7445 67.9 83.5445 71.5C85.3445 75.1 87.8778 77.8667 91.1445 79.8C94.4112 81.6667 98.1778 82.6 102.444 82.6C105.68 82.6 108.647 82.0075 111.344 80.8224ZM208.601 82V74.2C210.267 76.8 212.567 78.9 215.501 80.5C215.86 80.6878 216.227 80.864 216.601 81.0288C219.282 82.2096 222.349 82.8 225.801 82.8C230.401 82.8 234.567 81.6333 238.301 79.3C242.034 76.9 244.967 73.5333 247.101 69.2C249.301 64.8 250.401 59.7333 250.401 54C250.401 48.2667 249.301 43.2333 247.101 38.9C244.967 34.5667 242.034 31.2333 238.301 28.9C234.567 26.5667 230.401 25.4 225.801 25.4C222.399 25.4 219.332 26.0193 216.601 27.258C216.228 27.4271 215.861 27.6078 215.501 27.8C212.501 29.4 210.201 31.5 208.601 34.1V8H191.501V82H208.601ZM211.695 44.3356C210.838 45.3153 210.153 46.4283 209.641 47.6744C208.881 49.5231 208.501 51.665 208.501 54.1C208.501 58.3667 209.667 61.7333 212.001 64.2C214.401 66.6667 217.301 67.9 220.701 67.9C224.101 67.9 227.001 66.6667 229.401 64.2C231.801 61.6667 233.001 58.2667 233.001 54C233.001 49.7333 231.801 46.4 229.401 44C227.067 41.5333 224.167 40.3 220.701 40.3C217.301 40.3 214.401 41.5333 212.001 44C211.897 44.1101 211.795 44.2219 211.695 44.3356ZM217.778 49.5346C217.193 50.1704 216.501 51.3833 216.501 54.1C216.501 56.8167 217.193 58.0296 217.778 58.6654C218.676 59.5719 219.509 59.9 220.701 59.9C221.894 59.9 222.728 59.5711 223.627 58.662C224.309 57.9251 225.001 56.6569 225.001 54C225.001 51.28 224.281 50.1937 223.744 49.6569L223.665 49.5783L223.589 49.4976C222.802 48.6658 222.021 48.3 220.701 48.3C219.509 48.3 218.676 48.6281 217.778 49.5346ZM173.827 28.0101C173.66 28.104 173.493 28.2006 173.327 28.3C170.327 30.0333 167.827 32.4333 165.827 35.5V26.2H148.727V82H165.827V56.1C165.827 51.5 166.894 48.3 169.027 46.5C171.161 44.6333 174.361 43.7 178.627 43.7H183.327V25.6C180.456 25.6 177.79 26.1518 175.327 27.2554C174.819 27.4834 174.319 27.7349 173.827 28.0101Z" fill="#15191C"/>
+                    </svg>
+                    <!---<h1>Hurb</h1>--->
+                    <h5>The Great Little Bot That Does It All!</h5>
+                    <button class="add_button">
+                        <!--<svg class="discord_logo" width="50" height="49" viewBox="0 0 50 49" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect id="Discord-Logo-White 1" width="50" height="48.9796" fill="url(#pattern0)"/>
+                            <defs>
+                            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0" transform="scale(0.00408163)"/>
+                            </pattern>
+                            <image id="image0" data-name="Discord-Logo-White.png" width="245" height="240" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPUAAADwCAMAAADvotLkAAAAM1BMVEUAAAD///////////////////////////////////////////////////////////////+3leKCAAAAEHRSTlMAQIAQv++fz2Aw3yBwUK+PD/W3OwAABYNJREFUeAHt3deWqzAPhuHPljtN93+zf8kasktWHLPHgBj0nk956NVA0zRN0zRN0zRN0zRN07Q+kTFWSKMxOKIpFJZVXDJ2jcbCEosJ+zUVllo02CeaWXIL9ihHlp2jHdCepRe7s4cVfSc2Rb5CM7q28DUa0THDF8kP6FfkqxTQrYmv04BeOb5OCzo18IUq6NTIVyqjTzNfKYs+Fb5SM/rElyqiS5mvFbpkVK1qVata1apWtapVrWpVq1rVqlY1VK1qVata1apWtapVrWpVR2et9VytWLu4+EPUJaQMAMhz0+32PIZycXUcBzyagucP+TABqzxeVl1Wcl48N+VDxlfDUq6odgaPKMUXnPstz38UE+Gr5K6mDsM6y35TOWetMXjJGLv80vsw4CvjrqR2+cscVomz04B6w2RXZDB1t0R1MX+a5zGjNbPEP6YbkPwl1JYAABTWDfPGhnH+fR0BLfLVMePR6OvkajRGZm9p/Q+KcPVCz5dEXCL8ezn456oCmkWrHR7ZdUP8nSiVdSICRbLaAMAQiyX0KLmS8SgJVjsAMDGhW8YlPCpy1QZATuhaMgCAJFYdsWNFqjphx6xQdcGekZeptti1IFNN2LUsUh2wc06i2mDnkkB1we55eeoRuxfkqQfsXhannnFARZo64YBGaWrCAQ3C1DMOKcpSJxzSKEtNOKRBlHrGQUVJ6oSDWiSpBxxUFqSOOCwvR21xWEGO2uCwkhi1x4eGZK01hGrGWpsGfIjEqGdUM8/b0u9NZH3jYHxRinpEJQr8zL8jGd88OtsiRZ3bxwhLDStrrLInKeqmbW6FnbfsCEmI2m2ZM57wUtm0Jywy1HbTvxgadkae8L4gQz1tWgl9y8wb8b5RhprwttAwkfLGlcaIUPuNO1fbcrSFSiLUDu9rOaaxW0/iogS13ah2LWqD980S1GkPdcb7rAS12Xg2vLQgUMlIUG8dBi81/P6CSlmAuqDS2LKh8ltHmhSgdhsPml3LTj2jVjlfHTaeF5qGi9wO1dz5aotaVBomkt04WvByvjptGm09UsOB64R69ny1wQa2I+AT239CI8lXg54kbxs+L+EGfMqcr8bnhtE57+ZEqJSC89HZDFxfvUt0SzVOV7tbq1VtB/RrMnipSFTnMqJTg5vxmpOoRuIyoUNkOdJl1EjMznzf7Fe0ePXKbnZXzCtakLp+m2LyzFwSfeOFxbeH7YM/W81z9XtePhhsjlKsnsRGPl3Ny4cTwrJkbGkdeKKY+g2Vc9Wc8KbseIUbNEUrmb0l2Xf3ODWcQPp5/CQ31vFaGPCmkYWoK2xMjn/lltEQXiMzhsjP/DJc4ckrDnjt7cgn0c32fyWT7P8KLvIfzal6hUKQmh3hfVQ6fTsvRxalrl7tCp2+wzN6eW+xzUOfbz5NlT2CJPWapR4jj/gMvDYEse/aezt0+BJnpIpZlnptnr7/JU6HP6Lk5I+N40MiPAvf/HjekObLjHlVgjW5enOm4bAnGzuXC45lVxz/Y67oGJWqVrWqVa1qVata1apWdbdUrWpVq1rVqla1qlWtalWrWtWqzrdUg0/OxzPUhU/OxBPUM5/cSPF4deKTc0A4XE18drSFjZ+yiE8AwtFqwycXAGA8WA3H51b2Hyte4oFK3sBGtyyf24hHkz9UjXj6vutR9oeq6WQ2tbPRsVz4zKb2/wP4MXM7tP8f6BotfF4FzWx0zhQ+rdzMRvdS5JMam995wQ5l6/iMYvObJNipwZwQWtn4wdlbqpFuqUa6pRrJ31GN7O+oRo53VIPiHdWgcEc1EG6pxnhLNdIt1cj+jmrkckc1KN5RDZrvqAbCLdUYb6lGuqUa2d9RjVzuqAbFO6pBM+OOLdA0TdM0TdM0TdM0TdO0b/ZfegfWFMciUSwAAAAASUVORK5CYII="/>
+                            </defs>
+                        </svg>-->
+                        <span><a class="add_to_discord_link" href="https://discord.com/api/oauth2/authorize?client_id=736283988628602960&permissions=8&scope=bot" target="_blank">Add to Discord</a></span>
+                    </button>
+                    <!--<button class="add_button_1">
+                        <img src="https://cdn.discordapp.com/attachments/765942853586124820/776337914539933726/Screen_Shot_2020-11-11_at_10.49.37_PM.png" style="vertical-align:middle;">
+                    </button>-->
+                    <button class="features_button">
+                        <a class="features_link" href="#features">All Features</a>
+                    </button>
+                    <div class="login_prompt">Already added to your server? <a href="/">Login</a></div>
+                </div>
+            </div>
+            <div class="about" id="about">
+                <div class="curve">
+                    <svg class="curve-ani" width="1440" height="1440" viewBox="0 0 1440 1440" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="path" fill-rule="even-odd" clip-rule="even-odd" d="M354.886 330.394C230.273 278.372 224.768 144.461 103.273 84.8424C-255.885 -91.3989 -292.52 1174.13 103.273 1151.71C313.689 1139.79 333.797 829.856 544.472 825.179C683.706 822.088 742.669 987.833 878.624 956.105C965.903 935.736 983.128 844.059 1070.71 825.179C1183.4 800.886 1241.77 941.936 1353.34 912.463C1446.01 887.982 1521.18 848.196 1543.42 750.514C1571.8 625.894 1463.26 545.644 1353.34 490.24C1248.18 437.236 1167.64 520.812 1054.7 490.24C924.506 454.996 889.802 340.145 760.07 303.052C607.069 259.308 502.249 391.914 354.886 330.394Z" fill="#1E2126"/>
+                    </svg>
+                    <p class="p_about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor dictum risus, in semper tortor faucibus a. Phasellus porttitor bibendum ligula, in maximus massa suscipit vitae. In suscipit leo massa, non tincidunt massa vulputate sit amet. Phasellus vitae arcu dignissim, sollicitudin elit mattis, faucibus ante. Integer cursus.</p>
+                </div>
+            </div>
+            <div class="features" id="features">
+                <div class="feature_1">
+                    <div class="graphic_1 reveal-on-scroll"></div>
+                    <h4 class="h_text_1 reveal-on-scroll">High level Moderation</h4>
+                    <p class="text_1 reveal-on-scroll">
+                        Hurb is equipped with advanced moderation commands such as muting, tempmuting, modmuting (allows even admins to be muted), and channelmuting.
+                    </p>
+                </div>
+                <div class="feature_2">
+                    <div class="graphic_2 element-to-hide"></div>
+                    <h4 class="h_text_2 element-to-hide">Bustling economy</h4>
+                    <p class="text_2 element-to-hide">With gambling, donating, and even buying roles, hurb has one of the best economy systems of any bot out there.</p>
+                </div>
+                <div class="feature_3">
+                    <div class="graphic_3 element-to-hide"></div>
+                    <h4 class="h_text_3 element-to-hide">Auto features</h4>
+                    <p class="text_3 element-to-hide">Hurb can scan every message for potential things you don't want, such as invites, links, or even bad words, not to mention the ability to search and react to certain words within messsages.</p>
+                </div>
+                <div class="feature_4">
+                    <div class="graphic_4 element-to-hide"></div>
+                    <h4 class="h_text_4 element-to-hide">Animated emojis</h4>
+                    <p class="text_4 element-to-hide">If you send a failed emoji from any server that Hurb is in, whether it be an animated emoji from your current server or a regular one from a server you aren't even in, Hurb can send the message for you from a bot that looks exactly like yourself, essentially granting you nitro. All for free!</p>
+                </div>
+                <div class="feature_5">
+                    <div class="graphic_5 element-to-hide"></div>
+                    <h4 class="h_text_5 element-to-hide">Advanced ranking system</h4>
+                    <p class="text_5 element-to-hide">Want a ranking system with built in antispam? Like to be able to customize your person rank card? Even wanted to set your progress bar to a bunch of walking ducks? Well, Hurb can do that all and more with its leveling system!</p>
+                </div>
+                <div class="feature_6">
+                    <div class="graphic_6 element-to-hide"></div>
+                    <h4 class="h_text_6 element-to-hide">Great random stuff I made for no reason</h4>
+                    <p class="text_6 element-to-hide">Hurb also has lots of random, quirky but fun commands such as searching for gifs, playing hangman, and killing other users.
+                    </p>
+                </div>
+            </div>
+            <div class="coming-soon" id="coming-soon">
+                <h1 class="h_cs">More coming soon</h1>
+                <p class="text_cs">Hurb is a work-in-progress bot that really cares about the community and wishes for the best of all its users.<br>If you have anything in mind that can help us develop Hurb and make it better, feel free to suggest it!</p>
+                <div class="cs_icons"></div>
+            </div>
+            <div class="commands" id="commands">
+                <h1 class="h_cmds">Commands</h1>
+                <!--<h4 class="dtls_cmds">(hover for more details)</h4>-->
+                <div class="floats">
+                    <svg class="blob-ani" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#FF0066" d="M51.9,-15.4C58.1,2.4,47.8,27,29.9,39.6C12.1,52.2,-13.4,52.8,-33.7,39.7C-54,26.5,-69.2,-0.5,-62.8,-18.5C-56.3,-36.6,-28.1,-45.8,-2.7,-44.9C22.8,-44.1,45.6,-33.2,51.9,-15.4Z" transform="translate(100 100)" />
+                      
+                    <p class="text-1">%mute</p>
+                    <p class="text-2">%catto</p>
+                    <p class="text-3">%meme</p>
+                    <p class="text-4">%start</p>
+                    <p class="text-5">%rename</p>
+                    <p class="text-6">%purge</p>
+                    <p class="text-7">%timer</p>
+                    <p class="text-8">%kick</p>
+                    <p class="text-9">%modmute</p>
+                    <p class="text-10">%balance</p> 
+                    </svg>
+
+
+                    <!--<div class="cmd_mute"></div>
+                    <div class="cmd_kick"></div>
+                    <div class="cmd_unmute"></div>
+                    <div class="cmd_leaderboard"></div>
+                    <div class="cmd_prefix"></div>
+                    <div class="cmd_warn"></div>
+                    <div class="cmd_catto"></div>
+                    <div class="cmd_birb"></div>
+                    <div class="cmd_rename"></div>
+                    <div class="cmd_purge"></div>
+                    <div class="cmd_joke"></div>
+                    <div class="cmd_meme"></div>
+                    <div class="cmd_topic"></div>-->
+                    
+                </div>
+                <p class="text_cmds">
+                    If you’re more of an organized person and don’t prefer things floating around, you can view a complete list 
+                    <a href="/cmds">
+                        here
+                    </a>
+                </p>
+            </div>
+            <div class="join">
+                <div class="join_left">
+                    <h1 class="h_join">Join the party!</h1>
+                    <p class="text_join">(<s>pizza</s> cool commands included)</p>
+                    <div class="users">
+                        <h4 class="h_users">45434</h4>
+                        <h6 class="s_users">users</h6>
+                    </div>
+                    <div class="servers">
+                        <h4 class="h_servers">40</h4>
+                        <h6 class="s_servers">servers</h6>
+                    </div>
+                </div>
+                <button class="add_button_2"><span><a class="add_to_discord_link" href="https://discord.com/api/oauth2/authorize?client_id=736283988628602960&permissions=8&scope=bot">Add to Discord</a></span></button>
+            </div>
+            <div class="footer" id="bottom">
+                <div class="curve2">
+                    <svg class="footer_curve" width="1440" height="452" viewBox="0 0 1440 452" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M665.5 170.497C789.041 135.137 866.631 244.009 994 219.497C1113.5 196.5 1109.26 39.2714 1210.5 6.99941C1315.38 -26.43 1453 83.4977 1453 83.4977V451.997H-174.5V400.997C-174.5 400.997 -84.4118 413.575 -29 400.997C67.9101 379 80.4975 272.198 178 252.997C278.319 233.241 330.844 331.389 432 316.497C538.399 300.833 562.106 200.091 665.5 170.497Z" fill="#1E2126"/>
+                    </svg>    
+                    <p class="copyright">2020 Hurb</p>
+                    <p class="credits">Bot developed by Latkecrszy#7777  |  Website developed by Titan#0415</p>
+                    <p class="tandp">
+                        <a href="/terms.html">
+                            Terms
+                        </a>
+                            | 
+                        <a href="/privacy.html">
+                             Privacy
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script>
+            const preloader = document.querySelector('.preloader');
+
+const fadeEffect = setInterval(() => {
+  if (!preloader.style.opacity) {
+    preloader.style.opacity = 1;
+  }
+  if (preloader.style.opacity > 0) {
+    preloader.style.opacity -= 0.1;
+  } else {
+    clearInterval(fadeEffect);
+  }
+}, 200);
+
+window.addEventListener('load', fadeEffect);
+        </script>
+        <script>
+const wave1 = "M57.3,-12.6C66.4,9.5,60.6,42.5,42.6,54.7C24.5,66.8,-5.7,58.2,-20.4,43.9C-35,29.5,-33.9,9.4,-27.9,-8.3C-21.9,-26.1,-10.9,-41.5,6.6,-43.7C24.1,-45.8,48.1,-34.6,57.3,-12.6Z",
+      wave2 = "M69.7,-25.1C76.4,-1.9,58.5,26.9,39.9,36C21.4,45,2.2,34.2,-14.9,21.5C-32,8.8,-47.1,-5.7,-44.3,-23.5C-41.4,-41.4,-20.7,-62.6,5.4,-64.4C31.5,-66.1,62.9,-48.4,69.7,-25.1Z",
+      wave3 = "M33.1,-18.8C36.3,-1,27.6,12.6,11.5,27C-4.7,41.4,-28.5,56.6,-38.5,50C-48.5,43.5,-44.7,15.1,-36,-10.3C-27.3,-35.7,-13.7,-58.1,0.6,-58.3C15,-58.5,29.9,-36.5,33.1,-18.8Z",
+      wave4 = "M47.6,-19.7C53.7,3.5,45.3,27.2,28.1,39.9C11,52.7,-15,54.6,-27.7,44C-40.4,33.4,-39.9,10.3,-33.1,-13.8C-26.2,-37.9,-13.1,-63,3.8,-64.3C20.7,-65.5,41.4,-42.8,47.6,-19.7Z";
+
+anime({
+  targets: '.blob-ani > path',
+  easing: 'linear',
+  duration: 15000,
+  loop: true,
+  d: [
+    { value: [wave1, wave2] },
+    { value: wave3 },
+    { value: wave4 },
+    { value: wave1 },
+  ],
+});
+        </script>
+    </body>
+</html>

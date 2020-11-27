@@ -1,0 +1,48 @@
+body{
+    background-color: #15191C;
+    color: #FFFFFF;
+}
+
+.header{
+    position: fixed;
+    width: 100%;
+    margin: 0%;
+    height: 8%;
+    background: #15191C;
+    box-shadow: 4px 8px 18px rgba(0.30980393290519714, 0.30980393290519714, 0.30980393290519714, 1);
+    overflow: hidden;
+    padding: 20px 10px;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+}
+
+.h_links{
+    float: right;
+    padding: 20px;
+}
+
+.header a{
+    font-size: 18px;
+    text-decoration: none;
+    line-height: 25px;
+    padding: 15px;
+    float: left;
+    text-align: center;
+}
+.h_login{
+    float: left;
+    right: 0px;
+    position: absolute;
+    width: 130px;
+    height: 50px;
+    left: 1267px;
+    top: 27px;
+
+    border: 7px solid #1E2126;
+    box-sizing: border-box;
+    box-shadow: 4px 8px 18px rgba(0.30980393290519714, 0.30980393290519714, 0.30980393290519714, 1);
+    border-radius: 15px;
+    text-align: center;
+    vertical-align: center;
+}
